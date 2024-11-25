@@ -49,7 +49,7 @@ function Hero() {
       <div className="w-full md:w-[45%] overflow-hidden py-10 pr-10">
         <div className="w-[200px] h-[200px] mx-auto relative md:w-[300px] md:h-[300px] lg:w-[400px] lg:h-[400px]">
           <Image
-            src="/face.png"
+            src="/profile.png"
             alt="obi emmanuel"
             className="object-cover object-center"
             fill={true}

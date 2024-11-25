@@ -11,7 +11,6 @@ import { IoLogoCss3, IoLogoJavascript } from "react-icons/io";
 import { FaHtml5, FaNodeJs, FaReact } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
 import { IconType } from "react-icons";
-import Loading from "../loading";
 
 function About({ repoCount }: { repoCount: number | undefined }) {
   const icons: {

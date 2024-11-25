@@ -47,9 +47,8 @@ function Contact() {
       setIsLoading(true);
       await requestService({ ...data });
       setStatus({ success: "success", error: "" });
-      // eslint-disable-next-line
-    } catch (error: any) {
-      setStatus({ success: "", error: error.message });
+    } catch (error: unknown) {
+      setStatus({ success: "", error: (error as Error).message });
     } finally {
       setName("");
       setEmail("");

@@ -37,7 +37,7 @@ function Projects() {
       name: "Nacho Daddy",
       url: "https://nacho-daddy.vercel.app",
       repo: "https://www.github.com/nacho-daddy",
-      image: "/devlinks.png",
+      image: "/nacho-daddy.png",
     },
     {
       name: "My portfolio",
@@ -68,7 +68,7 @@ function Projects() {
       </div>
       <div className="flex justify-between items-start flex-col gap-4 md:gap-0 md:flex-row">
         <div className="w-full flex-1 pt-10 flex flex-col justify-start items-start gap-4 px-10">
-          {leftProjects.map(({ name, url, repo, image }) => (
+          {leftProjects.map(({ name, url, image }) => (
             <motion.figure
               key={name}
               initial={{ opacity: 0, x: "-100%" }}
@@ -98,7 +98,7 @@ function Projects() {
         </div>
 
         <div className="w-full flex-1 pb-10 flex flex-col justify-start items-start gap-4 px-10">
-          {rightProjects.map(({ name, url, repo, image }) => (
+          {rightProjects.map(({ name, url, image }) => (
             <motion.figure
               key={name}
               initial={{ opacity: 0, x: "100%" }}
