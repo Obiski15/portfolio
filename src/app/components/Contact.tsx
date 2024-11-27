@@ -99,7 +99,7 @@ function Contact() {
           initial={{ x: "100%" }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="w-full flex-1 px-10 py-5 md:py-10 flex justify-between items-start flex-col gap-4"
+          className="w-full flex-1 px-10 py-5 md:py-10 flex justify-between items-start flex-col gap-4 md:w-[50%]"
           onSubmit={(e) => {
             e.preventDefault();
             handleSubmit({ name, email, message, requestedService: interest });
@@ -129,23 +129,18 @@ function Contact() {
             className="w-full py-1 px-2 rounded-sm resize-none focus:outline-primary"
             rows={5}
           />
-          <Button
-            className="w-full text-ellipsis"
-            disabled={isLoading}
-            ref={scope}
-          >
+          <Button className="w-full" disabled={isLoading} ref={scope}>
             {isLoading ? (
               <Image src="/spin.svg" alt="spinner" width={24} height={24} />
             ) : status.error ? (
-              <span>
-                <motion.span
-                  initial={{ rotate: "90deg", opacity: 0 }}
-                  whileInView={{ rotate: 0, opacity: 1 }}
-                >
-                  {status.error!}
-                  <MdError className="inline-block text-red-500" />
-                </motion.span>
-              </span>
+              <motion.span
+                className="text-ellipsis overflow-hidden"
+                initial={{ rotate: "90deg", opacity: 0 }}
+                whileInView={{ rotate: 0, opacity: 1 }}
+              >
+                {status.error!}
+                <MdError className="inline-block text-red-500" />
+              </motion.span>
             ) : status.success ? (
               <motion.span
                 initial={{ rotate: "90deg", opacity: 0 }}
