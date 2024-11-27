@@ -12,7 +12,9 @@ import { FaHtml5, FaNodeJs, FaReact } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
 import { IconType } from "react-icons";
 
-function About({ repoCount }: { repoCount: number | undefined }) {
+import NumProjects from "./NumProjects";
+
+function About() {
   const icons: {
     Icon: IconType;
     color: string;
@@ -80,16 +82,18 @@ function About({ repoCount }: { repoCount: number | undefined }) {
   ];
 
   return (
-    <section className="w-full bg-[#0E1329] overflow-hidden" id="about">
+    <section className="bg-[#0E1329] overflow-hidden" id="about">
       <div className="flex justify-between items-center gap-4 p-5 overflow-scroll no-scrollbar">
         <div className="flex justify-center items-center gap-2">
-          <h1 className="text-5xl font-semibold">1</h1>
+          <h1 className="text-5xl font-semibold">
+            {new Date().getFullYear() - new Date("08-24-2023").getFullYear()}
+          </h1>
           <p className="uppercase text-accent font-medium text:sm md:text-[16px]">
             year(s) of experience
           </p>
         </div>
         <div className="flex justify-center items-center gap-2">
-          <h1 className="text-5xl font-semibold">{repoCount}</h1>
+          <NumProjects />
           <p className="uppercase text-accent font-medium text:sm md:text-[16px]">
             projects/collabs
           </p>

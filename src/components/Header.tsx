@@ -35,7 +35,7 @@ function Header() {
 
   return (
     <header
-      className={`w-full sticky top-0 z-[999] ${
+      className={`sticky top-0 z-[999] ${
         scrollPosition === 0 ? "bg-linear" : "bg-[#ffffff19]"
       } backdrop-blur-md flex justify-between items-center px-10 py-5`}
     >

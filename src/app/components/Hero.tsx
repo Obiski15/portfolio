@@ -7,7 +7,7 @@ import Social from "./Social";
 function Hero() {
   return (
     <section
-      className="bg-custom-gradient min-h-full flex flex-col-reverse justify-between items-start gap-4 md:flex-row md:gap-0"
+      className="bg-custom-gradient flex flex-col-reverse justify-between items-start gap-4 md:flex-row md:gap-0"
       id="home"
     >
       <div className="w-full flex flex-col gap-4 justify-between items-start py-10 pl-10 md:w-[55%]">

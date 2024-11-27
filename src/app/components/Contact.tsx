@@ -60,7 +60,7 @@ function Contact() {
 
   return (
     <section
-      className="w-full bg-[#6863ce] text-background overflow-hidden"
+      className="bg-[#6863ce] text-background overflow-hidden"
       id="contact"
     >
       <motion.div
@@ -129,7 +129,11 @@ function Contact() {
             className="w-full py-1 px-2 rounded-sm resize-none focus:outline-primary"
             rows={5}
           />
-          <Button className="w-full" disabled={isLoading} ref={scope}>
+          <Button
+            className="w-full text-ellipsis"
+            disabled={isLoading}
+            ref={scope}
+          >
             {isLoading ? (
               <Image src="/spin.svg" alt="spinner" width={24} height={24} />
             ) : status.error ? (

@@ -4,9 +4,9 @@ import Progress from "./Progress";
 
 function Skills() {
   return (
-    <section className="w-full bg-radial" id="skills">
+    <section className="bg-radial" id="skills">
       <div>
-        <h3 className="text-3xl md:text-5xl font-semibold px-10 py-10 flex items-center justify-start gap-2 tracking-wider">
+        <h3 className="text-3xl md:text-5xl font-semibold px-10 py-5 flex items-center justify-start gap-2 tracking-wider md:py-10">
           My skills
         </h3>
         <div className="px-10 pt-5 pb-10 flex justify-between items-start flex-col min-[550px]:flex-row">

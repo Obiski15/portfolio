@@ -24,10 +24,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`antialiased ${poppins.className}`}>
-        <div className="flex flex-col justify-between items-start">
+        <div>
           <Header />
-          {children}
-
+          <main>{children}</main>
           <Footer />
         </div>
       </body>
