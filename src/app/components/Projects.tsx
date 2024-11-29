@@ -33,7 +33,7 @@ function Projects() {
     },
     {
       name: "GeoTrackr",
-      url: "https://geotrackr.vercel.app",
+      url: "https://geo-trackr.vercel.app",
       repo: "https://www.github.com/GeoTrackr",
       image: "/geotrackr.png",
       technologies: ["React", "Nodejs", "React-query", "styled components"],
