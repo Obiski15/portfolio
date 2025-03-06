@@ -10,7 +10,7 @@ function Hero() {
       className="bg-custom-gradient flex flex-col-reverse justify-between items-start gap-4 md:flex-row md:gap-0"
       id="home"
     >
-      <div className="w-full flex flex-col gap-4 justify-between items-start py-10 pl-10 md:w-[55%]">
+      <div className="w-full flex flex-col gap-4 justify-between items-start py-10 px-5 md:w-[55%] sm:px-10">
         <div className="w-full text-2xl leading-[40px] font-bold capitalize  min-[870px]:text-4xl min-[870px]:leading-[60px]">
           <p>
             Hi <span className="lowercase">there👋 !</span>
@@ -34,7 +34,7 @@ function Hero() {
           </motion.p>
         </div>
 
-        <div className="text-sm md:w-[90%]">
+        <div className="text-sm md:w-[90%] text-left">
           I am a Frontend Developer who constantly seek out innovative solutions
           to everyday problems. I am a challenger by heart and builder by
           nature. Over the years, i have spent time converting desings, into
@@ -46,12 +46,12 @@ function Hero() {
         <Social />
       </div>
 
-      <div className="w-full md:w-[45%] overflow-hidden py-10 pr-10">
-        <div className="w-[200px] h-[200px] mx-auto relative md:w-[300px] md:h-[300px] lg:w-[400px] lg:h-[400px]">
+      <div className="w-full md:w-[45%] flex justify-center items-center pt-10">
+        <div className="relative w-[300px] h-[300px] lg:w-[400px] lg:h-[400px]">
           <Image
             src="/profile.png"
             alt="obi emmanuel"
-            className="object-cover object-center"
+            className="inline-block object-cover object-center"
             fill={true}
           />
         </div>

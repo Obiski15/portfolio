@@ -31,6 +31,7 @@ function Header() {
 
   function handleScrollTo(section: string) {
     document.getElementById(section)?.scrollIntoView({ behavior: "smooth" });
+    handleNav();
   }
 
   return (

@@ -111,7 +111,7 @@ function Contact() {
             value={name}
             type="text"
             onChange={(e) => setName(e.target.value)}
-            className="w-full py-1 px-2 rounded-sm focus:outline-primary"
+            className="w-full py-1 px-2 rounded-sm focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-4 transition-all"
           />
           <input
             disabled={isLoading}
@@ -119,14 +119,14 @@ function Contact() {
             value={email}
             type="email"
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full py-1 px-2 rounded-sm focus:outline-primary"
+            className="w-full py-1 px-2 rounded-sm focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-4 transition-all"
           />
           <textarea
             disabled={isLoading}
             placeholder="Message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="w-full py-1 px-2 rounded-sm resize-none focus:outline-primary"
+            className="w-full py-1 px-2 rounded-sm focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-4 transition-all"
             rows={5}
           />
           <Button className="w-full" disabled={isLoading} ref={scope}>

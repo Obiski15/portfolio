@@ -39,6 +39,20 @@ function Projects() {
       technologies: ["React", "Nodejs", "React-query", "styled components"],
     },
     {
+      name: "AI text processing interface",
+      url: "https://geo-trackr.vercel.app",
+      repo: "https://github.com/Obiski15/hng-stage3-ai-text-processing-interface",
+      image: "/ai-text-interface.png",
+      technologies: ["Next.js", "Chrome AI", "Tailwind CSS", "TypeScript"],
+    },
+    {
+      name: "Event Ticket Generator",
+      url: "https://obiski-ticket-generator.vercel.app/",
+      repo: "https://github.com/Obiski15/hng-stage2-ticket-generator",
+      image: "/ticz.png",
+      technologies: ["React", "TypeScript", "Tailwind CSS"],
+    },
+    {
       name: "Nacho Daddy",
       url: "https://nacho-daddy.vercel.app",
       repo: "https://www.github.com/nacho-daddy",
@@ -52,11 +66,25 @@ function Projects() {
       ],
     },
     {
+      name: "Tattoo Shop",
+      url: "https://obiski-tattoo-shop.vercel.app/",
+      repo: "https://github.com/Obiski15/Tattoo-Shop",
+      image: "/tattoo-shop.png",
+      technologies: ["Next.js", "Tailwind CSS"],
+    },
+    {
       name: "My portfolio",
       url: "https://obiski.vercel.app",
       repo: "https://www.github.com/portfolio",
       image: "/my-portfolio.png",
       technologies: ["Next.js", "Framer motion", "tailwind css", "Typescript"],
+    },
+    {
+      name: "Tripma",
+      url: "https://obiski-tripma.vercel.app",
+      repo: "https://github.com/Obiski15/tripma",
+      image: "/tripma.png",
+      technologies: ["Next.js", "MongoDB", "tailwind css", "Typescript"],
     },
   ];
 
