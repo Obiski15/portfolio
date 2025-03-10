@@ -40,7 +40,7 @@ function Projects() {
     },
     {
       name: "AI text processing interface",
-      url: "https://geo-trackr.vercel.app",
+      url: "https://hng-stage3-ai-text-processing-interface.vercel.app/",
       repo: "https://github.com/Obiski15/hng-stage3-ai-text-processing-interface",
       image: "/ai-text-interface.png",
       technologies: ["Next.js", "Chrome AI", "Tailwind CSS", "TypeScript"],
