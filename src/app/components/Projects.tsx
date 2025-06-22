@@ -4,6 +4,7 @@ import { GoArrowUpRight } from "react-icons/go";
 import * as motion from "motion/react-client";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 
 interface IProject {
   name: string;
@@ -18,73 +19,52 @@ function Projects() {
 
   const projects: IProject[] = [
     {
-      name: "devlinks",
-      url: "https://obiski-link-sharing-app.vercel.app/links",
+      name: "Devlinks",
+      url: "https://tinyurl.com/56xh2vu7",
       repo: "https://www.github.com/DevLinks",
-      image: "/devlinks.png",
-      technologies: ["Next.js", "tailwind css", "React-query", "Typescript"],
+      image: "/projects/devlinks.png",
+      technologies: ["Next.js", "Tailwind CSS", "React-query", "Typescript"],
     },
     {
       name: "Ruvid Store",
-      url: "https://obiski-ruvid-store.vercel.app",
+      url: "https://tinyurl.com/msusmad4",
       repo: "https://www.github.com/ruvid-store",
-      image: "/ruvid-store.png",
-      technologies: ["React", "Nodejs", "React-query", "styled components"],
+      image: "/projects/ruvid-store.png",
+      technologies: ["React", "Node.js", "React-query", "Styled-Components"],
     },
     {
-      name: "GeoTrackr",
-      url: "https://geo-trackr.vercel.app",
-      repo: "https://www.github.com/GeoTrackr",
-      image: "/geotrackr.png",
-      technologies: ["React", "Nodejs", "React-query", "styled components"],
-    },
-    {
-      name: "AI text processing interface",
-      url: "https://hng-stage3-ai-text-processing-interface.vercel.app/",
-      repo: "https://github.com/Obiski15/hng-stage3-ai-text-processing-interface",
-      image: "/ai-text-interface.png",
-      technologies: ["Next.js", "Chrome AI", "Tailwind CSS", "TypeScript"],
-    },
-    {
-      name: "Event Ticket Generator",
-      url: "https://obiski-ticket-generator.vercel.app/",
-      repo: "https://github.com/Obiski15/hng-stage2-ticket-generator",
-      image: "/ticz.png",
-      technologies: ["React", "TypeScript", "Tailwind CSS"],
-    },
-    {
-      name: "Nacho Daddy",
-      url: "https://nacho-daddy.vercel.app",
-      repo: "https://www.github.com/nacho-daddy",
-      image: "/nacho-daddy.png",
+      name: "Coinbank",
+      url: "https://tinyurl.com/yc3w7m3r",
+      repo: "https://github.com/Obiski15/Coinbank-FE",
+      image: "/projects/coinbank.png",
       technologies: [
-        "React",
-        "supabase",
-        "React-query",
-        "tailwind css",
-        "redux",
+        "Next.js",
+        "Typescript",
+        "Tailwind CSS",
+        "MongoDB",
+        "Node.js",
       ],
     },
     {
+      name: "Tripma",
+      url: "https://tinyurl.com/33enkhdn",
+      repo: "https://github.com/Obiski15/tripma",
+      image: "/projects/tripma.png",
+      technologies: ["Next.js", "MongoDB", "Tailwind CSS", "Typescript"],
+    },
+    {
       name: "Tattoo Shop",
-      url: "https://obiski-tattoo-shop.vercel.app/",
+      url: "https://tinyurl.com/y43j5yun",
       repo: "https://github.com/Obiski15/Tattoo-Shop",
-      image: "/tattoo-shop.png",
+      image: "/projects/tattoo-shop.png",
       technologies: ["Next.js", "Tailwind CSS"],
     },
     {
       name: "My portfolio",
-      url: "https://obiski.vercel.app",
+      url: "https://tinyurl.com/4b6u94ty",
       repo: "https://www.github.com/portfolio",
-      image: "/my-portfolio.png",
-      technologies: ["Next.js", "Framer motion", "tailwind css", "Typescript"],
-    },
-    {
-      name: "Tripma",
-      url: "https://obiski-tripma.vercel.app",
-      repo: "https://github.com/Obiski15/tripma",
-      image: "/tripma.png",
-      technologies: ["Next.js", "MongoDB", "tailwind css", "Typescript"],
+      image: "/projects/my-portfolio.png",
+      technologies: ["Next.js", "Framer motion", "Tailwind CSS", "Typescript"],
     },
   ];
 
@@ -133,12 +113,13 @@ function Projects() {
 
               <figcaption className="flex justify-between items-center">
                 <p className="capitalize font-medium">{name}</p>
-                <p
+                <Link
+                  href={url}
+                  target="_blank"
                   className="text-secondary text-right cursor-pointer capitalize hover:underline"
-                  onClick={() => router.push(url)}
                 >
                   live url <GoArrowUpRight className="inline-block" />
-                </p>
+                </Link>
               </figcaption>
             </motion.figure>
           ))}
@@ -171,12 +152,14 @@ function Projects() {
 
               <figcaption className="flex justify-between items-center">
                 <p className="capitalize font-medium">{name}</p>
-                <p
+                <Link
+                  href={url}
+                  target="_blank"
                   className="text-secondary text-right cursor-pointer capitalize hover:underline"
                   onClick={() => router.push(url)}
                 >
                   live url <GoArrowUpRight className="inline-block" />
-                </p>
+                </Link>
               </figcaption>
             </motion.figure>
           ))}

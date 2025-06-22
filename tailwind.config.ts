@@ -57,11 +57,6 @@ export default {
           "linear-gradient(to bottom right, #240D41, #030617, #051626)",
         radial: "radial-gradient(circle, #240D41, #030617, #051626)",
         linear: "linear-gradient(to right, #240D41,#051626)",
-        facebook: "linear-gradient(to top right, #ffffff, #2B54F3 )",
-        instagram: "linear-gradient(to top right, #CA199A, #3E53D1 )",
-        github: "linear-gradient(to top right, #181717,  #6e7681 )",
-        x: "linear-gradient(to top, #71767B, #000000 )",
-        linkedin: "linear-gradient(to top right, #0077B5, #ffffff )",
       },
       borderRadius: {
         lg: "var(--radius)",

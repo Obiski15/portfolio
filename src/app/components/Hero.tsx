@@ -3,6 +3,7 @@ import * as motion from "motion/react-client";
 import HeroButtons from "./HeroButtons";
 import Image from "next/image";
 import Social from "./Social";
+import Typewriter from "../../components/Typewriter";
 
 function Hero() {
   return (
@@ -18,15 +19,14 @@ function Hero() {
           <p>
             I&apos;m <span className="text-[#F8B018]">Obi Emmanuel</span>
           </p>
-
           <motion.p
-            initial={{ x: "-100%", rotate: "90deg" }}
-            animate={{ x: 0, rotate: "3deg" }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, rotate: "3deg" }}
             whileHover={{ rotate: "0deg" }}
             transition={{ ease: "easeOut" }}
             className="border-2 border-[rgb(104,99,206)] mt-4 mb-2 tracking-widest text-secondary w-fit relative cursor-pointer"
           >
-            Frontend developer
+            <Typewriter>Full-stack Developer</Typewriter>
             <span className="w-4 h-4 bg-[rgb(104,99,206)] absolute bottom-[-8px] right-[-6px] rounded-full"></span>
             <span className="w-4 h-4 bg-[rgb(104,99,206)] absolute bottom-[-8px] left-[-6px] rounded-full"></span>
             <span className="w-4 h-4 bg-[rgb(104,99,206)] absolute top-[-8px] right-[-6px] rounded-full"></span>
@@ -34,12 +34,17 @@ function Hero() {
           </motion.p>
         </div>
 
-        <div className="text-sm md:w-[90%] text-left">
-          I am a Frontend Developer who constantly seek out innovative solutions
-          to everyday problems. I am a challenger by heart and builder by
-          nature. Over the years, i have spent time converting desings, into
-          pixel perfect, performant, accessible amd responsive web applications.
-          you can simply describe me as a Frontend addict.
+        <div className="text-sm md:w-[90%] leading-relaxed">
+          I&apos;m a Full-stack Developer driven by a relentless curiosity to
+          solve real-world problems through clean, scalable, and user-centered
+          solutions. I don&apos;t just build features, I architect experiences.
+          With a strong foundation in both frontend and backend logic, I
+          specialize in transforming ideas and designs into high-performance
+          applications that not only look great but work flawlessly under the
+          hood. You could call me a product-minded engineer, a problem solver,
+          or simply a fullstack addict — but at the core, I&apos;m someone who
+          codes with intent, challenges convention, and thrives in the pursuit
+          of better.
         </div>
 
         <HeroButtons />
