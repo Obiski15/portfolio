@@ -1,10 +1,10 @@
 "use client";
 
-import { GoArrowUpRight } from "react-icons/go";
 import * as motion from "motion/react-client";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { GoArrowUpRight } from "react-icons/go";
 
 interface IProject {
   name: string;
@@ -31,6 +31,13 @@ function Projects() {
       repo: "https://www.github.com/ruvid-store",
       image: "/projects/ruvid-store.png",
       technologies: ["React", "Node.js", "React-query", "Styled-Components"],
+    },
+    {
+      name: "Notes",
+      url: "https://tinyurl.com/3z5a4e3h",
+      repo: "https://github.com/Obiski15/notes",
+      image: "/projects/notes.png",
+      technologies: ["Next.js", "Typescript", "Tailwind CSS", "MongoDB"],
     },
     {
       name: "Coinbank",
