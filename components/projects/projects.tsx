@@ -2,7 +2,7 @@ import { Button } from '../ui/button'
 
 function Projects() {
   return (
-    <div className="space-y-10">
+    <div className="space-y-10 p-4">
       <div className="flex items-center justify-between uppercase">
         <h3 className="text-primary text-md">[list_projects]</h3>
 
