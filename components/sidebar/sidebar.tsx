@@ -10,6 +10,7 @@ import {
   Key,
   TicketPercent,
 } from 'lucide-react'
+import Image from 'next/image'
 import Icon from '../icon'
 import { Badge } from '../ui/badge'
 import {
@@ -36,7 +37,16 @@ function AppSidebar() {
   return (
     <Sidebar className="border-border static border-r lg:w-auto">
       <SidebarHeader className="lg:border-border flex flex-row items-center gap-3 p-4 md:p-1 lg:border lg:p-4">
-        <div className="border-primary size-8 rounded-xs border md:mx-auto lg:mx-0"></div>
+        <div className="border-primary size-8 rounded-xs border md:mx-auto lg:mx-0">
+          <Image
+            width={32}
+            height={32}
+            alt="profile"
+            loading="lazy"
+            src="/me.jpg"
+            className="object-cover"
+          />
+        </div>
 
         <div className="uppercase md:hidden lg:block lg:flex-1">
           <h3 className="text-[11px] leading-[16.25px] text-[#cdbdff]">

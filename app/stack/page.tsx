@@ -38,8 +38,7 @@ function StackPage() {
           {Object.entries(stack).map(([key, value]) => (
             <div key={key}>
               <p className="capitalize">
-                <span className="text-primary">{`${key}`}</span>
-                <span className="text-white">:</span>
+                <span className="text-primary">{`${key}`}</span>:
               </p>
               {Object.entries(value).map(([subKey, subValue]) => (
                 <p key={subKey} className="pl-4">
