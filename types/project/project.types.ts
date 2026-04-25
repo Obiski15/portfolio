@@ -19,11 +19,13 @@ export interface IProjectStack {
 
   infrastructure?: {
     virtualization?: string[]
+    discovery?: string[]
     messaging?: string[]
   }
   persistence?: {
     databases?: string[]
     caches?: string[]
+    orm?: string[]
     storages?: string[]
   }
   networking?: {

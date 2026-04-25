@@ -1,29 +1,39 @@
 import { IProjectStack, ProjectType } from '@/types/project/project.types'
 
+export const coreCompetencies = [
+  'Backend Architecture',
+  'API Design',
+  'Database Management',
+  'Functional Frontend',
+]
+
 export const stack: IProjectStack = {
   backend: {
-    languages: ['nestjs', 'nestjs', 'nestjs'],
-    tools: ['nestjs', 'nestjs', 'nestjs'],
-    frameworks: ['nestjs', 'nestjs', 'nestjs'],
+    languages: ['TypeScript', 'JavaScript', 'Python'],
+    tools: ['Node.js'],
+    frameworks: ['NestJS', 'Fastify', 'Express'],
   },
   frontend: {
-    languages: ['react', 'react', 'react'],
-    tools: ['react', 'react', 'react'],
-    frameworks: ['react', 'react', 'react'],
+    languages: ['TypeScript', 'JavaScript'],
+    tools: ['Tailwind CSS', 'Shadcn/UI', 'Zustand'],
+    frameworks: ['Next.js', 'React'],
   },
   infrastructure: {
-    virtualization: ['docker', 'docker', 'docker'],
-    messaging: ['docker', 'docker', 'docker'],
+    virtualization: ['Docker'],
+    // orchestration: ['Kubernetes'],
+    messaging: ['RabbitMQ'],
+    discovery: ['Consul'],
   },
   persistence: {
-    databases: ['postgres', 'postgres', 'postgres'],
-    caches: ['redis', 'redis', 'redis'],
-    storages: ['aws s3', 'aws s3', 'aws s3'],
+    databases: ['PostgreSQL', 'MongoDB', 'MySQL'],
+    orm: ['Prisma', 'TypeORM'],
+    caches: ['Redis'],
+    storages: ['AWS S3', 'Cloudinary'],
   },
   networking: {
-    monitoring: ['prometheus', 'prometheus', 'prometheus'],
-    logging: ['elasticsearch', 'elasticsearch', 'elasticsearch'],
-    tracing: ['jaeger', 'jaeger', 'jaeger'],
+    monitoring: ['Prometheus', 'Grafana'],
+    logging: ['Elasticsearch', 'Logstash', 'Kibana'],
+    tracing: ['Jaeger'],
   },
 }
 

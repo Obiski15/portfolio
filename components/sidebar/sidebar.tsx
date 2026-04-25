@@ -11,6 +11,7 @@ import {
   TicketPercent,
 } from 'lucide-react'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 import Icon from '../icon'
 import { Badge } from '../ui/badge'
 import {
@@ -34,6 +35,8 @@ import {
 } from '../ui/sidebar'
 
 function AppSidebar() {
+  const router = useRouter()
+
   return (
     <Sidebar className="border-border static border-r lg:w-auto">
       <SidebarHeader className="lg:border-border flex flex-row items-center gap-3 p-4 md:p-1 lg:border lg:p-4">
@@ -76,7 +79,10 @@ function AppSidebar() {
                 <CollapsibleContent>
                   <SidebarMenuSub>
                     <SidebarMenuSubItem>
-                      <SidebarMenuSubButton className="text-muted-foreground">
+                      <SidebarMenuSubButton
+                        onClick={() => router.push('/about')}
+                        className="text-muted-foreground cursor-pointer"
+                      >
                         <Icon
                           color="var(--color-muted-foreground)"
                           Icon={FileText}
@@ -86,7 +92,10 @@ function AppSidebar() {
                     </SidebarMenuSubItem>
 
                     <SidebarMenuSubItem>
-                      <SidebarMenuSubButton className="text-muted-foreground">
+                      <SidebarMenuSubButton
+                        onClick={() => router.push('/stack')}
+                        className="text-muted-foreground cursor-pointer"
+                      >
                         <Icon
                           Icon={Code}
                           color="var(--color-muted-foreground)"
@@ -96,7 +105,10 @@ function AppSidebar() {
                     </SidebarMenuSubItem>
 
                     <SidebarMenuSubItem>
-                      <SidebarMenuSubButton className="text-muted-foreground">
+                      <SidebarMenuSubButton
+                        onClick={() => router.push('/architecture')}
+                        className="text-muted-foreground cursor-pointer"
+                      >
                         <Icon
                           Icon={GitGraph}
                           color="var(--color-muted-foreground)"
@@ -114,7 +126,10 @@ function AppSidebar() {
         <SidebarGroup className="md:p-1 lg:p-2">
           <SidebarMenu>
             <SidebarMenuItem className="hidden md:block lg:hidden">
-              <SidebarMenuButton className="text-muted-foreground md:p-1 lg:p-2">
+              <SidebarMenuButton
+                onClick={() => router.push('/about')}
+                className="text-muted-foreground cursor-pointer md:p-1 lg:p-2"
+              >
                 <Icon
                   color="var(--color-muted-foreground)"
                   Icon={FileText}
@@ -125,7 +140,10 @@ function AppSidebar() {
             </SidebarMenuItem>
 
             <SidebarMenuItem className="hidden md:block lg:hidden">
-              <SidebarMenuButton className="text-muted-foreground md:p-1 lg:p-2">
+              <SidebarMenuButton
+                onClick={() => router.push('/stack')}
+                className="text-muted-foreground cursor-pointer md:p-1 lg:p-2"
+              >
                 <Icon
                   Icon={Code}
                   color="var(--color-muted-foreground)"
@@ -136,7 +154,10 @@ function AppSidebar() {
             </SidebarMenuItem>
 
             <SidebarMenuItem className="hidden md:block lg:hidden">
-              <SidebarMenuButton className="text-muted-foreground md:p-1 lg:p-2">
+              <SidebarMenuButton
+                onClick={() => router.push('/architecture')}
+                className="text-muted-foreground cursor-pointer md:p-1 lg:p-2"
+              >
                 <Icon
                   Icon={GitGraph}
                   color="var(--color-muted-foreground)"
@@ -147,7 +168,10 @@ function AppSidebar() {
             </SidebarMenuItem>
 
             <SidebarMenuItem>
-              <SidebarMenuButton className="text-primary md:p-1 lg:p-2">
+              <SidebarMenuButton
+                onClick={() => router.push('/contact')}
+                className="text-primary cursor-pointer md:p-1 lg:p-2"
+              >
                 <Icon Icon={TicketPercent} className="md:mx-auto lg:mx-0" />
                 <span className="uppercase md:hidden lg:inline">
                   open_ticket()
