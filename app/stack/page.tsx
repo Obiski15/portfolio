@@ -1,3 +1,4 @@
+import LineCount from '@/components/common/line_count'
 import Icon from '@/components/icon'
 import { stack } from '@/constants'
 import { SquareTerminal, X } from 'lucide-react'
@@ -21,18 +22,7 @@ function StackPage() {
       </div>
 
       <div className="flex text-sm leading-6">
-        <div className="text-muted-foreground">
-          {Array.from(
-            {
-              length: computeLineNum(),
-            },
-            (_, i) => (
-              <p key={i} className="pr-6 pl-4">
-                {i}
-              </p>
-            ),
-          )}
-        </div>
+        <LineCount length={computeLineNum()} />
 
         <div className="flex-1 space-y-6 overflow-x-auto whitespace-nowrap">
           {Object.entries(stack).map(([key, value]) => (

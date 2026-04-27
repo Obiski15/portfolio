@@ -1,4 +1,5 @@
-import { Button } from '../ui/button'
+import { projects } from '@/constants'
+import ProjectItem from './project_item'
 
 function Projects() {
   return (
@@ -16,47 +17,8 @@ function Projects() {
       </div>
 
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {Array.from({ length: 11 }).map((_, i) => (
-          <div
-            key={i}
-            className="bg-card border-border h-full space-y-4 rounded-xs border p-5"
-          >
-            <div className="space-y-1">
-              <div className="text-primary flex items-center gap-2 text-[10px] uppercase">
-                <p className="bg-primary size-1.5"></p>
-                <p>[live]</p>
-              </div>
-
-              <h3 className="text-md text-primary leading-6 uppercase">
-                project name
-              </h3>
-              <p className="text-muted-foreground wrap-break-word">
-                project description
-              </p>
-            </div>
-
-            <div></div>
-
-            {/* stack */}
-            <div className="flex flex-wrap gap-1.5 uppercase">
-              <p className="border-border text-muted-foreground border p-2">
-                nestjs
-              </p>
-              <p className="border-border text-muted-foreground border p-2">
-                nestjs
-              </p>
-              <p className="border-border text-muted-foreground border p-2">
-                nestjs
-              </p>
-            </div>
-
-            <Button
-              variant="accent"
-              className="w-full rounded-none py-2 uppercase"
-            >
-              View
-            </Button>
-          </div>
+        {projects.map((project, i) => (
+          <ProjectItem key={i} project={project} />
         ))}
       </div>
     </div>

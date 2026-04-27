@@ -19,10 +19,7 @@ function ApiContact() {
   return (
     <div className="bg-card border-border space-y-4 rounded-2xl border p-5">
       <div className="gap- flex items-center uppercase">
-        <div></div>
-        <h2 className={`${jetBrainsMono.variable} text-secondary text-sm`}>
-          api_contact
-        </h2>
+        <h2 className={`${jetBrainsMono.variable} text-sm`}>api_contact</h2>
       </div>
 
       <div className="p-3">

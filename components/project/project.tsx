@@ -1,17 +1,12 @@
+import ProjectDesc from './project_desc'
+import ProjectInfra from './project_infra'
+
 function Project() {
   return (
-    <div className="space-y-6">
-      <div>architectural diagram</div>
+    <div className="space-y-6 p-6">
+      <ProjectInfra />
 
-      <div className="flex gap-6">
-        <div className="w-[10%] px-3 py-4">
-          {Array.from({ length: 12 }, (_, i) => (
-            <p key={i}>{i}</p>
-          ))}
-        </div>
-
-        <div className="w-[90%]"></div>
-      </div>
+      <ProjectDesc />
     </div>
   )
 }

@@ -132,4 +132,28 @@
   body {
     @apply bg-background text-foreground mx-auto max-w-360 min-w-3xs text-xs;
   }
+  body::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer base {
+  ::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--background);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+    box-shadow: 0 0 5px var(--primary);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: color-mix(in srgb, var(--primary), white 20%);
+  }
 }

@@ -80,7 +80,7 @@ function AppSidebar() {
                   <SidebarMenuSub>
                     <SidebarMenuSubItem>
                       <SidebarMenuSubButton
-                        onClick={() => router.push('/about')}
+                        onClick={() => router.push('/intro')}
                         className="text-muted-foreground cursor-pointer"
                       >
                         <Icon
@@ -106,7 +106,7 @@ function AppSidebar() {
 
                     <SidebarMenuSubItem>
                       <SidebarMenuSubButton
-                        onClick={() => router.push('/architecture')}
+                        onClick={() => router.push('/projects')}
                         className="text-muted-foreground cursor-pointer"
                       >
                         <Icon
@@ -127,7 +127,7 @@ function AppSidebar() {
           <SidebarMenu>
             <SidebarMenuItem className="hidden md:block lg:hidden">
               <SidebarMenuButton
-                onClick={() => router.push('/about')}
+                onClick={() => router.push('/intro')}
                 className="text-muted-foreground cursor-pointer md:p-1 lg:p-2"
               >
                 <Icon
@@ -155,7 +155,7 @@ function AppSidebar() {
 
             <SidebarMenuItem className="hidden md:block lg:hidden">
               <SidebarMenuButton
-                onClick={() => router.push('/architecture')}
+                onClick={() => router.push('/projects')}
                 className="text-muted-foreground cursor-pointer md:p-1 lg:p-2"
               >
                 <Icon

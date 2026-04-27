@@ -1,5 +1,5 @@
-import Projects from '@/components/projects/projects'
+import NetworkPulse from '@/components/home/network_pulse'
 
 export default function Home() {
-  return <Projects />
+  return <NetworkPulse />
 }

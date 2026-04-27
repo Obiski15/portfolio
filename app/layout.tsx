@@ -55,7 +55,7 @@ export default function RootLayout({
                   {children}
                 </section>
 
-                <section className="max-sm:hidden md:w-[30%]">
+                <section className="max-md:hidden md:w-[40%] lg:w-[30%]">
                   <RightPanel />
                 </section>
               </main>
