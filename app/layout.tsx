@@ -5,7 +5,7 @@ import localFont from 'next/font/local'
 const liberationMono = localFont({
   src: [
     {
-      path: '../fonts/liberation_mono/LiberationMono-Regular.ttf',
+      path: '../public/fonts/liberation_mono/LiberationMono-Regular.ttf',
       weight: '400',
       style: 'normal',
     },
