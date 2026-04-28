@@ -1,10 +1,13 @@
 'use client'
 
 import { contactSchema } from '@/schema/contact.schema'
+import { contact_me } from '@/services/contact.service'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { ShieldPlus } from 'lucide-react'
+import { useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import * as z from 'zod'
+import Spinner from '../common/spinner'
 import Icon from '../icon'
 import { Button } from '../ui/button'
 import {
@@ -39,9 +42,21 @@ function ContactForm() {
       message: '',
     },
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const onSubmit = (data: z.infer<typeof contactSchema>) => {
-    console.log('Form Data:', data)
+  const onSubmit = async (data: z.infer<typeof contactSchema>) => {
+    try {
+      setIsSubmitting(true)
+      await contact_me(data)
+      // form.reset({
+      //   message: '',
+      //   email: '',
+      // })
+    } catch (error) {
+      console.error('Error submitting contact form:', error)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -163,8 +178,10 @@ function ContactForm() {
             type="submit"
             variant="accent"
             className="w-full rounded-none px-8 py-3 md:w-fit"
+            disabled={isSubmitting}
           >
             Submit_ticket
+            {isSubmitting && <Spinner />}
           </Button>
         </div>
       </FieldGroup>

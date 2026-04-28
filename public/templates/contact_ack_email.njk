@@ -1,0 +1,36 @@
+{# acknowledgment-template.njk #}
+<div style="font-family: 'Courier New', Courier, monospace; background-color: #0d1117; color: #c9d1d9; padding: 20px; border: 1px solid #30363d; border-radius: 8px; max-width: 600px;">
+  
+  <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+    <div style="width: 10px; height: 10px; background-color: #00e475; border-radius: 50%;"></div>
+    <span style="color: #00e475; font-weight: bold; letter-spacing: 2px;">CONNECTION_ESTABLISHED</span>
+  </div>
+
+  <p style="line-height: 1.6;">
+    Hello,<br><br>
+    Your transmission has been successfully received and indexed. I have been notified of your inquiry regarding <span style="color: #00e475;">"{{ request_type }}"</span>.
+  </p>
+
+  <div style="margin: 25px 0; border: 1px dashed #30363d; padding: 15px; background-color: #161b22;">
+    <p style="margin: 0; font-size: 13px;">
+      <span style="color: #8b949e;">&gt; STATUS:</span> <span style="color: #00e475;">QUEUED</span><br>
+      <span style="color: #8b949e;">&gt; PRIORITY:</span> {{ priority | upper }}<br>
+      <span style="color: #8b949e;">&gt; ETA:</span> AS SOON AS POSSIBLE
+    </p>
+  </div>
+
+  <p style="line-height: 1.6;">
+    I'll review the details and reach out to you via this address ({{ email }}) shortly.
+  </p>
+
+  <p style="margin-top: 30px;">
+    Best regards,<br>
+    <span style="color: #00e475; font-weight: bold;">Emmanuel Obi</span>
+  </p>
+
+  <hr style="border: 0; border-top: 1px solid #30363d; margin: 20px 0;">
+
+  <p style="font-size: 10px; color: #484f58; text-align: center; text-transform: uppercase;">
+    Automated Response //
+  </p>
+</div>
