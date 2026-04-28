@@ -39,26 +39,31 @@ function AppSidebar() {
 
   return (
     <Sidebar className="border-border static border-r lg:w-auto">
-      <SidebarHeader className="lg:border-border flex flex-row items-center gap-3 p-4 md:p-1 lg:border lg:p-4">
-        <div className="border-primary size-8 rounded-xs border md:mx-auto lg:mx-0">
-          <Image
-            width={32}
-            height={32}
-            alt="profile"
-            loading="lazy"
-            src="/me.jpg"
-            className="object-cover"
-          />
-        </div>
+      <SidebarHeader>
+        <button
+          onClick={() => router.push('/')}
+          className="lg:border-border flex cursor-pointer flex-row items-center gap-3 p-4 text-left md:p-1 lg:border lg:p-4"
+        >
+          <div className="border-primary size-8 rounded-xs border md:mx-auto lg:mx-0">
+            <Image
+              width={32}
+              height={32}
+              alt="profile"
+              loading="lazy"
+              src="/images/me.png"
+              className="object-cover"
+            />
+          </div>
 
-        <div className="uppercase md:hidden lg:block lg:flex-1">
-          <h3 className="text-[11px] leading-[16.25px] text-[#cdbdff]">
-            Obi_Emmanuel
-          </h3>
-          <p className="text-muted-foreground text-[10px] leading-[17.88px]">
-            Fullstack_Developer
-          </p>
-        </div>
+          <div className="uppercase md:hidden lg:block lg:flex-1">
+            <h3 className="text-[11px] leading-[16.25px] text-[#cdbdff]">
+              Obi_Emmanuel
+            </h3>
+            <p className="text-muted-foreground text-[10px] leading-[17.88px]">
+              Fullstack_Developer
+            </p>
+          </div>
+        </button>
       </SidebarHeader>
 
       <SidebarContent className="mt-4 px-4 md:px-0 lg:px-4">

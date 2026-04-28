@@ -3,32 +3,32 @@ import { cn } from '@/lib/utils'
 const logs = [
   {
     tag: 'INFO',
-    message: 'System started successfully.',
+    message: 'System started successfully',
     timestamp: '2026-04-01 10:00:00',
   },
   {
-    tag: 'OK',
-    message: 'db_backup_s3.sh complete',
+    tag: 'INFO',
+    message: 'Installing dependencies...',
     timestamp: '2026-04-01 10:05:00',
   },
   {
-    tag: 'INFO',
-    message: 'User logged in.',
+    tag: 'WARN',
+    message: '0 errors, 2 warnings found',
     timestamp: '2026-04-01 10:15:00',
   },
   {
-    tag: 'OK',
-    message: 'process_batch_0x44 initiated',
+    tag: 'INFO',
+    message: 'Compiling...',
     timestamp: '2026-04-01 10:10:00',
   },
   {
-    tag: 'INFO',
-    message: 'User logged out.',
+    tag: 'OK',
+    message: 'Test suites passed (5/5)',
     timestamp: '2026-04-01 10:20:00',
   },
   {
     tag: 'OK',
-    message: 'system health check passed',
+    message: 'Application live at production URL',
     timestamp: '2026-04-01 10:25:00',
   },
 ]
@@ -53,7 +53,8 @@ function SYSLogs() {
             )}
             <span
               className={cn('w-[20%] shrink-0 px-2 py-1', {
-                'text-warning': tag === 'WARN' || tag === 'INFO',
+                'text-warning': tag === 'WARN',
+                'text-accent': tag === 'INFO',
                 'text-primary': tag === 'OK',
               })}
             >

@@ -1,12 +1,12 @@
 'use client'
 
-import { contactSchema } from '@/schema/contact.schema'
+import { contactSchema, contactSchemaType } from '@/schema/contact.schema'
 import { contact_me } from '@/services/contact.service'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { ShieldPlus } from 'lucide-react'
+import { useSearchParams } from 'next/navigation'
 import { useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
-import * as z from 'zod'
 import Spinner from '../common/spinner'
 import Icon from '../icon'
 import { Button } from '../ui/button'
@@ -33,25 +33,29 @@ import {
 } from '../ui/select'
 
 function ContactForm() {
-  const form = useForm<z.infer<typeof contactSchema>>({
+  const searchParams = useSearchParams()
+
+  const form = useForm<contactSchemaType>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
       email: '',
-      request_type: 'partnership',
-      priority: 'low',
-      message: '',
+      request_type:
+        (searchParams.get(
+          'request_type',
+        ) as contactSchemaType['request_type']) || 'partnership',
+      priority:
+        (searchParams.get('priority') as contactSchemaType['priority']) ||
+        'low',
+      message: searchParams.get('message') || '',
     },
   })
+
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const onSubmit = async (data: z.infer<typeof contactSchema>) => {
+  const onSubmit = async (data: contactSchemaType) => {
     try {
       setIsSubmitting(true)
       await contact_me(data)
-      // form.reset({
-      //   message: '',
-      //   email: '',
-      // })
     } catch (error) {
       console.error('Error submitting contact form:', error)
     } finally {

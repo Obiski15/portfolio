@@ -16,3 +16,5 @@ export const contactSchema = z.object({
     .max(100, 'Message must be less than 100 characters long')
     .nonoptional('Message is required'),
 })
+
+export type contactSchemaType = z.infer<typeof contactSchema>

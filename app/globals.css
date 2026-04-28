@@ -139,21 +139,17 @@
 
 @layer base {
   ::-webkit-scrollbar {
-    width: 3px;
-    height: 3px;
+    @apply size-1;
   }
-
   ::-webkit-scrollbar-track {
-    background: var(--background);
+    @apply bg-background;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: var(--primary);
-    border-radius: 10px;
-    box-shadow: 0 0 5px var(--primary);
+    @apply bg-primary rounded-[10px] shadow-[0_0_5px_var(--primary)];
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: color-mix(in srgb, var(--primary), white 20%);
+    @apply bg-primary/80;
   }
 }

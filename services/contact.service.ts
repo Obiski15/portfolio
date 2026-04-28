@@ -1,9 +1,6 @@
-import { contactSchema } from '@/schema/contact.schema'
-import * as z from 'zod'
+import { contactSchemaType } from '@/schema/contact.schema'
 
-export const contact_me = async (
-  contactData: z.infer<typeof contactSchema>,
-) => {
+export const contact_me = async (contactData: contactSchemaType) => {
   const response = await fetch('/api/v1/contact', {
     method: 'POST',
     headers: {

@@ -1,5 +1,8 @@
+'use client'
+
 import { Mail } from 'lucide-react'
 import { JetBrains_Mono } from 'next/font/google'
+import { useRouter } from 'next/navigation'
 import Icon from '../icon'
 import { Button } from '../ui/button'
 
@@ -10,12 +13,14 @@ const jetBrainsMono = JetBrains_Mono({
 })
 
 const code_block = [
-  { subject: 'Request Proposal' },
-  { priority: 'HIGH' },
-  { endpoint: 'POST/v1/ticket' },
+  { priority: 'high' },
+  { request_type: 'partnership' },
+  { message: 'I’m interested in discussing a potential collaboration.' },
 ]
 
 function ApiContact() {
+  const router = useRouter()
+
   return (
     <div className="bg-card border-border space-y-4 rounded-2xl border p-5">
       <div className="gap- flex items-center uppercase">
@@ -40,6 +45,19 @@ function ApiContact() {
       <Button
         className="text-md flex w-full items-center justify-center space-x-2 rounded-none py-6 font-bold"
         variant="accent"
+        onClick={() =>
+          router.push(
+            `/contact${code_block
+              .map((block, i) =>
+                Object.entries(block).map(([key, value]) => {
+                  console.log()
+                  if (i === 0) return `?${key}=${value}`
+                  return `&${key}=${value}`
+                }),
+              )
+              .join('')}`,
+          )
+        }
       >
         <Icon Icon={Mail} />
         <span>Open a ticket</span>
