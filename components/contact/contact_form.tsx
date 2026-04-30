@@ -58,7 +58,7 @@ function ContactForm() {
       setIsSubmitting(true)
       const response = await contact_me(data)
       if (response) {
-        toast.success('Thank you for reaching out')
+        toast.success('Message sent! I’ll get back to you shortly.')
         form.reset({
           email: '',
           message: '',

@@ -50,7 +50,6 @@ function ApiContact() {
             `/contact${code_block
               .map((block, i) =>
                 Object.entries(block).map(([key, value]) => {
-                  console.log()
                   if (i === 0) return `?${key}=${value}`
                   return `&${key}=${value}`
                 }),

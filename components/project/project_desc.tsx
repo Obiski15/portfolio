@@ -1,26 +1,25 @@
 'use client'
 
-import { projects } from '@/constants'
+import { IProject } from '@/types/project/project.types'
 import { BookOpen, Eye, SquareArrowOutUpRight } from 'lucide-react'
-import { usePathname } from 'next/navigation'
 import LineCount from '../common/line_count'
 import Icon from '../icon'
 import { Badge } from '../ui/badge'
 import { Button } from '../ui/button'
 
-function ProjectDesc() {
-  const pathname = usePathname()
-
-  const projectName = decodeURIComponent(pathname).split('/').at(-1)
-
-  const project = projects.find(p => p.name.toLowerCase() === projectName)
-
+function ProjectDesc({
+  project_name,
+  project,
+}: {
+  project_name: string
+  project: IProject | undefined
+}) {
   return (
     <>
       <div className="border-border text-secondary-foreground flex items-center gap-2 border px-4 py-2 leading-[16.5px]">
         <Icon Icon={BookOpen} />
         <span>
-          README.md <span className="capitalize">{projectName}</span>
+          README.md <span className="capitalize">{project_name}</span>
         </span>
       </div>
 
@@ -31,7 +30,7 @@ function ProjectDesc() {
 
         <div className="border-border space-y-4 border p-6 md:w-[90%]">
           <h3 className="text-2xl leading-8 font-bold capitalize">
-            {projectName}
+            {project_name}
           </h3>
 
           <p className="text-muted-foreground text-sm leading-5.5">

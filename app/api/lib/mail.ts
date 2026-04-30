@@ -18,8 +18,8 @@ function createTransporter(): Transporter {
   return nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      type: 'OAuth2',
-      user: 'me@gmail.com',
+      user: config.MAIL.gmail.user,
+      pass: config.MAIL.gmail.pass,
     },
   })
 }

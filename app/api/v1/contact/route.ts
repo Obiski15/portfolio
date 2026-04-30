@@ -33,11 +33,11 @@ export const POST = await catch_async(async (request: NextRequest) => {
   })
 
   // send mail
-  // await send_mail({
-  //   to: config.MAIL.account,
-  //   subject: `New contact request from ${validated_data.email}`,
-  //   html: template,
-  // })
+  await send_mail({
+    to: config.MAIL.account,
+    subject: `New contact request from ${validated_data.email}`,
+    html: template,
+  })
 
   // send acknowledgment email
   await send_mail({
