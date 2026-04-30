@@ -8,7 +8,7 @@ export const send_response = ({
   message,
 }: {
   message: string
-  status: 'success' | 'error'
+  status: 'success' | 'error' | 'fail'
   status_code?: number
   data?: Record<string, unknown>
   error?: unknown

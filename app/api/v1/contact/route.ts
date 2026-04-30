@@ -1,4 +1,4 @@
-import { contactSchema } from '@/schema/contact.schema'
+import { contactSchema, contactSchemaType } from '@/schema/contact.schema'
 import { NextRequest } from 'next/server'
 
 import config from '@/config'
@@ -6,12 +6,11 @@ import { catch_async } from '../../helpers/catch_async'
 import { send_response } from '../../helpers/send_response'
 import send_mail from '../../lib/mail'
 import { render_template } from '../../lib/nunjucks'
-import { IContact } from '../../types/api.types'
 import { validate_params } from '../../validators/validate_params'
 
 // send mail
 export const POST = await catch_async(async (request: NextRequest) => {
-  const body = (await request.json()) as IContact
+  const body = (await request.json()) as contactSchemaType
 
   const validated_data = validate_params(contactSchema, body)
 
@@ -34,11 +33,11 @@ export const POST = await catch_async(async (request: NextRequest) => {
   })
 
   // send mail
-  await send_mail({
-    to: config.MAIL.account,
-    subject: `New contact request from ${validated_data.email}`,
-    html: template,
-  })
+  // await send_mail({
+  //   to: config.MAIL.account,
+  //   subject: `New contact request from ${validated_data.email}`,
+  //   html: template,
+  // })
 
   // send acknowledgment email
   await send_mail({

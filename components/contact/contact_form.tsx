@@ -7,6 +7,7 @@ import { ShieldPlus } from 'lucide-react'
 import { useSearchParams } from 'next/navigation'
 import { useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
+import { toast } from 'sonner'
 import Spinner from '../common/spinner'
 import Icon from '../icon'
 import { Button } from '../ui/button'
@@ -55,9 +56,19 @@ function ContactForm() {
   const onSubmit = async (data: contactSchemaType) => {
     try {
       setIsSubmitting(true)
-      await contact_me(data)
+      const response = await contact_me(data)
+      if (response) {
+        toast.success('Thank you for reaching out')
+        form.reset({
+          email: '',
+          message: '',
+        })
+      }
     } catch (error) {
-      console.error('Error submitting contact form:', error)
+      const error_message =
+        (error as unknown as Error).message || 'Error submitting contact form'
+
+      toast.error(error_message)
     } finally {
       setIsSubmitting(false)
     }

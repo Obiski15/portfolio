@@ -17,6 +17,7 @@ import RightPanel from '@/components/right-panel/right_panel'
 import AppSidebar from '@/components/sidebar/sidebar'
 import { SidebarProvider } from '@/components/ui/sidebar'
 import { ThemeProvider } from 'next-themes'
+import { Toaster } from 'sonner'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -37,6 +38,7 @@ export default function RootLayout({
     >
       <body className="min-h-full" suppressHydrationWarning>
         <ThemeProvider defaultTheme="dark">
+          <Toaster />
           <SidebarProvider
             style={
               {

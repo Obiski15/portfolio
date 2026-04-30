@@ -1,17 +1,17 @@
-import config from '@/config'
 import { NextRequest, NextResponse } from 'next/server'
 import { AppError } from '../errors/app.error'
 import { error_handler } from './error_handler'
+import { rate_limit } from './rate_limit'
 
 export const catch_async = async (
   fn: (request: NextRequest) => Promise<NextResponse>,
 ) => {
   return async (request: NextRequest) => {
     try {
+      rate_limit(request)
+
       return await fn(request)
     } catch (error) {
-      config.nodeEnv === 'development' &&
-        console.error('Error in catch_async:', error)
       return error_handler(error as AppError)
     }
   }
