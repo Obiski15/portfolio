@@ -2,6 +2,7 @@
 
 import { IProject } from '@/types/project/project.types'
 import { BookOpen, Eye, SquareArrowOutUpRight } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 import LineCount from '../common/line_count'
 import Icon from '../icon'
 import { Badge } from '../ui/badge'
@@ -14,6 +15,8 @@ function ProjectDesc({
   project_name: string
   project: IProject | undefined
 }) {
+  const router = useRouter()
+
   return (
     <>
       <div className="border-border text-secondary-foreground flex items-center gap-2 border px-4 py-2 leading-[16.5px]">
@@ -37,7 +40,7 @@ function ProjectDesc({
             {project?.description}
           </p>
 
-          <div>latency and throughput metrics </div>
+          {/* <div>TODO: latency and throughput metrics </div> */}
 
           <div className="space-y-3">
             <h3 className="pb-1 text-sm leading-5 font-bold text-white uppercase">
@@ -60,12 +63,15 @@ function ProjectDesc({
           </div>
 
           <div className="bg-card flex flex-col gap-4 p-4 sm:flex-row [&>button]:flex [&>button]:items-center [&>button]:gap-2 [&>button]:rounded-none [&>button]:px-6 [&>button]:py-3">
-            <Button variant="accent">
+            <Button
+              variant="accent"
+              onClick={() => router.push(project?.links.github ?? '')}
+            >
               <Icon Icon={Eye} />
               <span>Github</span>
             </Button>
 
-            <Button>
+            <Button onClick={() => router.push(project?.links.live ?? '')}>
               <Icon Icon={SquareArrowOutUpRight} />
               <span>Live</span>
             </Button>

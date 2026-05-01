@@ -17,7 +17,7 @@ function Project() {
 
   return project ? (
     <div className="space-y-6 p-6">
-      <ProjectInfra />
+      <ProjectInfra project={project} />
 
       <ProjectDesc project_name={project_name} project={project} />
     </div>

@@ -1,6 +1,8 @@
 import { cn } from '@/lib/utils'
+import { IProject } from '@/types/project/project.types'
 import { Scan } from 'lucide-react'
 import { JetBrains_Mono } from 'next/font/google'
+import Image from 'next/image'
 import Icon from '../icon'
 
 const jetBrainsMono = JetBrains_Mono({
@@ -8,7 +10,7 @@ const jetBrainsMono = JetBrains_Mono({
   weight: ['400'],
 })
 
-function ProjectInfra() {
+function ProjectInfra({ project }: { project: IProject }) {
   return (
     <div>
       <div className="border-border flex items-center justify-between border px-4 py-2">
@@ -39,10 +41,17 @@ function ProjectInfra() {
           >
             Infrastructure Overview
           </h3>
-          <p></p>
         </div>
 
-        <div className="border-2">Diagram</div>
+        <div className="no-scrollbar overflow-auto">
+          <Image
+            alt="Infrastructure Diagram"
+            src={`/images/projects/${project.image}`}
+            width={800}
+            height={600}
+            className="size-auto max-h-none max-w-none"
+          />
+        </div>
       </div>
     </div>
   )
