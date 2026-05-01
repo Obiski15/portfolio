@@ -52,7 +52,7 @@ export default function RootLayout({
             <div className="flex w-full justify-stretch">
               <AppSidebar />
 
-              <main className="w-full max-md:overflow-y-auto md:flex md:items-start md:[&>section]:max-h-screen md:[&>section]:overflow-y-auto">
+              <main className="w-full overflow-x-auto max-md:overflow-y-auto md:flex md:items-start md:[&>section]:max-h-screen md:[&>section]:overflow-y-auto">
                 <section className="border-border border-r md:w-[70%]">
                   {children}
                 </section>

@@ -45,6 +45,7 @@ export const stack: IProjectStack = {
 export const projects: IProject[] = [
   {
     name: 'W-Commerce',
+    image: 'w-commerce.png',
     description:
       'W-Commerce is a headless commerce engine built for social sellers, designed to power sales through messaging platforms like WhatsApp using AI',
     type: ProjectType.API,
@@ -62,10 +63,15 @@ export const projects: IProject[] = [
         virtualization: ['Docker'],
       },
     },
+    links: {
+      github: 'https://github.com/Obiski15/Headless-Commerce-Engine',
+      live: '',
+    },
   },
   {
     name: 'Distributed Notification System',
     abbreviation: 'DNS',
+    image: 'dns.png',
     description:
       'A scalable microservice system that can handle high volumes of notifications across multiple channels (Email, push)',
     status: ProjectStatus.LIVE,
@@ -80,12 +86,17 @@ export const projects: IProject[] = [
         virtualization: ['Docker'],
       },
       persistence: {
-        databases: ['PostgreSQL', 'Redis'],
+        databases: ['MySQL', 'Redis'],
       },
+    },
+    links: {
+      github: 'https://github.com/Obiski15/Distributed-Notification-System',
+      live: '',
     },
   },
   {
     name: 'Log Analyser Agent',
+    image: 'log-analyser.png',
     description:
       'An intelligent AI-powered log analysis system built that analyzes server logs, detects issues, and provides actionable recommendations.',
     type: ProjectType.API,
@@ -97,9 +108,14 @@ export const projects: IProject[] = [
         frameworks: ['Mastra', 'Node.js'],
       },
     },
+    links: {
+      github: 'https://github.com/Obiski15/log-analyzer-agent',
+      live: '',
+    },
   },
   {
     name: 'Paystack Wallet Service',
+    image: 'paystack-wallet.png',
     type: ProjectType.API,
     status: ProjectStatus.LIVE,
     description:
@@ -114,9 +130,14 @@ export const projects: IProject[] = [
         orm: ['TypeORM'],
       },
     },
+    links: {
+      github: 'https://github.com/Obiski15/Paystack-Wallet-Service',
+      live: '',
+    },
   },
   {
     name: 'DevLinks',
+    image: 'devlinks.png',
     type: ProjectType.WEB,
     status: ProjectStatus.LIVE,
     description:
@@ -135,9 +156,14 @@ export const projects: IProject[] = [
         orm: ['MongoDB'],
       },
     },
+    links: {
+      github: 'https://github.com/Obiski15/link-sharing-app/',
+      live: 'https://tinyurl.com/cah2yhdh',
+    },
   },
   {
     name: 'Notes',
+    image: 'notes.png',
     description:
       'A cross-platform notes app to capture, manage, and sync your ideas across all devices.',
     type: ProjectType.WEB,
@@ -155,6 +181,10 @@ export const projects: IProject[] = [
       persistence: {
         databases: ['MongoDB'],
       },
+    },
+    links: {
+      github: 'https://github.com/Obiski15/notes',
+      live: 'https://tinyurl.com/e65r9cdd',
     },
   },
 ] as const

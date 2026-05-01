@@ -77,9 +77,14 @@ export interface IProjectStack {
 
 export interface IProject {
   abbreviation?: string
+  image: string
   name: string
   type: ProjectType
   status: ProjectStatus
   description: string
   stack: IProjectStack
+  links: {
+    github: string
+    live: string
+  }
 }
