@@ -3,8 +3,9 @@ import { AppError } from '../errors/app.error'
 import { send_response } from './send_response'
 
 export const error_handler = (error: AppError) => {
-  config.nodeEnv === 'development' &&
+  if (config.nodeEnv === 'development') {
     console.error('Error in catch_async:', error)
+  }
 
   const options: { message: string; status_code: number } = {
     message: 'Something went wrong',

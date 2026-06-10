@@ -1,31 +1,31 @@
 'use client'
 
-import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
-function ErrorPage() {
+export default function ErrorPage() {
   const router = useRouter()
 
   return (
-    <div className="flex h-screen flex-col items-center justify-center space-y-4 text-center">
-      <h1 className="text-2xl font-bold">Something went wrong...</h1>
+    <div className="flex min-h-screen flex-col items-center justify-center space-y-6 text-center px-6">
+      <h1 className="text-3xl font-semibold tracking-tight text-zinc-100">Something went wrong</h1>
 
-      <p>
-        I'm looking into it now. If refreshing the page doesn't work, contact{' '}
+      <p className="max-w-md text-zinc-400">
+        I&apos;m looking into it now. If refreshing the page doesn&apos;t work, contact{' '}
         <Link
           href="mailto:obiski15@gmail.com"
-          className="text-accent underline"
+          className="text-emerald-400 hover:text-emerald-300 transition-colors underline underline-offset-4"
         >
           me
         </Link>{' '}
         for updates.
       </p>
-      <Button onClick={() => router.refresh()} className="px-6 py-3">
+      <button 
+        onClick={() => router.refresh()} 
+        className="rounded-full bg-zinc-100 px-6 py-2.5 text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-200"
+      >
         Reload page
-      </Button>
+      </button>
     </div>
   )
 }
-
-export default ErrorPage

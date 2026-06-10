@@ -31,6 +31,8 @@ function getTransporter(): Transporter {
   return transporter
 }
 
+const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
+
 async function send_mail({
   from = config.MAIL.account,
   to,
@@ -38,14 +40,37 @@ async function send_mail({
   subject,
   ...rest
 }: SendMailOptions) {
-  const result = await getTransporter().sendMail({
-    from,
-    to,
-    subject,
-    html,
-    ...rest,
-  })
-  return result
+  const MAX_RETRIES = 3
+  const BACKOFF_DELAYS = [1000, 3000] // 1s for first retry, 3s for second
+  
+  let attempt = 0
+  
+  while (attempt < MAX_RETRIES) {
+    try {
+      const result = await getTransporter().sendMail({
+        from,
+        to,
+        subject,
+        html,
+        ...rest,
+      })
+      return result
+    } catch (error: any) {
+      attempt++
+      
+      // Do not retry on obvious validation/auth failures if they are known, 
+      // but typical transient network/smtp errors should be retried.
+      const isTransient = !error.responseCode || (error.responseCode >= 400 && error.responseCode < 500 === false)
+      
+      if (!isTransient || attempt >= MAX_RETRIES) {
+        console.error(`[Mail Service] Failed to send email to ${to} after ${attempt} attempts:`, error)
+        throw error
+      }
+      
+      console.warn(`[Mail Service] Transient failure sending to ${to} (Attempt ${attempt}/${MAX_RETRIES}). Retrying in ${BACKOFF_DELAYS[attempt - 1]}ms...`)
+      await delay(BACKOFF_DELAYS[attempt - 1])
+    }
+  }
 }
 
 export default send_mail

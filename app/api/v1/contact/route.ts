@@ -17,8 +17,6 @@ export const POST = await catch_async(async (request: NextRequest) => {
   const template = render_template('contact_email.njk', {
     name: validated_data.name,
     email: validated_data.email,
-    priority: validated_data.priority,
-    request_type: validated_data.request_type,
     message: validated_data.message,
     date: new Date().toLocaleString(),
   })
@@ -26,8 +24,6 @@ export const POST = await catch_async(async (request: NextRequest) => {
   const ack_template = render_template('contact_ack_email.njk', {
     name: validated_data.name,
     email: validated_data.email,
-    priority: validated_data.priority,
-    request_type: validated_data.request_type,
     message: validated_data.message,
     date: new Date().toLocaleString(),
   })
@@ -39,13 +35,17 @@ export const POST = await catch_async(async (request: NextRequest) => {
     html: template,
   })
 
-  // send acknowledgment email
-  await send_mail({
-    from: validated_data.email as string,
-    to: config.MAIL.account,
-    subject: `Thank you for your contact request`,
-    html: ack_template,
-  })
+  // send acknowledgment email (graceful degradation)
+  try {
+    await send_mail({
+      from: config.MAIL.account,
+      to: validated_data.email as string,
+      subject: `Message Received - Obi Emmanuel`,
+      html: ack_template,
+    })
+  } catch (error) {
+    console.error('[API] Failed to send acknowledgment email, but primary notification succeeded:', error)
+  }
 
   return send_response({
     status: 'success',

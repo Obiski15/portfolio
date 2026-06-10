@@ -1,4 +1,4 @@
-export default {
+const config = {
   nodeEnv: process.env.NODE_ENV || 'development',
   PORT: process.env.PORT || 3000,
   MAIL: {
@@ -13,3 +13,5 @@ export default {
     },
   },
 }
+
+export default config

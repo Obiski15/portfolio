@@ -7,9 +7,8 @@ export const contact_me = async (contactData: contactSchemaType) => {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
+      name: contactData.name,
       email: contactData.email,
-      priority: contactData.priority,
-      request_type: contactData.request_type,
       message: contactData.message,
     }),
   })

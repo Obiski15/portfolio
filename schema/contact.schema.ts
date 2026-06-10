@@ -1,15 +1,14 @@
 import { z } from 'zod'
 
 export const contactSchema = z.object({
+  name: z
+    .string()
+    .min(3, 'Name must be at least 3 characters long')
+    .max(100, 'Name must be less than 100 characters long')
+    .nonoptional('Name is required'),
   email: z
     .email({ error: 'Please enter a valid email address' })
     .nonoptional('Email is required'),
-  request_type: z
-    .enum(['support', 'feedback', 'partnership'])
-    .nonoptional('Request type is required'),
-  priority: z
-    .enum(['low', 'medium', 'high'])
-    .nonoptional('Priority is required'),
   message: z
     .string()
     .min(10, 'Message must be at least 10 characters long')
